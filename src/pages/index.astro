@@ -1,0 +1,86 @@
+---
+import Badge from "../components/Badge.astro";
+import Layout from "../layouts/Layout.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import SocialIcons from "../components/SocialIcons.astro";
+import WhatsappIcon from "../components/icons/Whatsapp.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Projects from "../components/Projects.astro";
+---
+
+<Layout>
+  <main>
+    <SectionContainer>
+      <div class="flex flex-col lg:flex-row items-center justify-center gap-5 pt-15">
+        <img
+          id="julian-photo"
+          src="../../public/julian-photo.png"
+          alt="julian-photo"
+          class="rounded-full size-64 lg:w-70 lg:h-70 object-cover border-4 border-white-500"
+        />
+        <div>
+          <h1
+            class="text-2xl lg:text-4xl font-bold flex flex-row gap-x-2 sm:gap-x-4 pb-2 lg:pb-10 w-[300px] sm:w-[500px] sm:w-full text-pretty-100 lg:text-left"
+          >
+            Hola, soy Julian
+            <a
+              href="https://www.linkedin.com/in/julian-ca%C3%B1on-a733a3320/"
+              target="_blank"
+              rel="noopener"
+              class="flex justify-center items-center"
+              ><Badge>Disponible para trabajar</Badge></a
+            >
+          </h1>
+          <h2 class="text-xl lg:text-2xl text-warp py-4 max-w-[500px]">
+            <span class="text-green-200/80">Ingeniero de Sistemas</span>
+            próximo a graduarse el 20 Junio de 2025. Con una sólida formación en
+            análisis y desarrollo de software.
+          </h2>
+          <nav class="flex flex-col sm:flex-row gap-4 lg:gap-6 text-lg">
+            <SocialIcons
+              href="https://www.linkedin.com/in/julian-ca%C3%B1on-a733a3320/"
+            >
+              <LinkedInIcon class="size-6" />
+              LinkedIn
+            </SocialIcons>
+            <SocialIcons href="https://github.com/JulianCastillo14">
+              <GitHubIcon class="size-6" /> GitHub
+            </SocialIcons>
+            <SocialIcons href="https://wa.me/+573116518098">
+              <WhatsappIcon class="size-6" /> WhatsApp
+            </SocialIcons>
+          </nav>
+        </div>
+      </div>
+    </SectionContainer>
+    <SectionContainer id="sobre-mi">
+      <div class="flex flex-col items-center justify-center gap-10">
+        <div>
+          <h2 class="text-2xl lg:text-4xl font-bold text-left w-full pt-10">
+            Sobre mí
+          </h2>
+          <p class="text-xl text-warp max-w-[500px] lg:max-w-[800px] pt-10">
+            Soy un apasionado por la tecnología y el desarrollo de software. Me
+            encanta aprender nuevas tecnologías y enfrentar desafíos que me
+            permitan crecer profesionalmente.
+          </p>
+        </div>
+      </div>
+    </SectionContainer>
+    <SectionContainer id="proyectos">
+      <div class="flex flex-col items-center justify-center gap-10">
+        <div>
+          <h2 class="text-2xl lg:text-4xl font-bold text-left w-full">
+            Proyectos
+          </h2>
+          <p class="text-xl text-warp max-w-[500px] lg:max-w-[800px] pt-10 pb-10">
+            Aquí puedes ver algunos de mis proyectos más destacados. Cada uno de
+            ellos refleja mi compromiso con la calidad y la innovación, en las soluciones de software propuestas.
+          </p>
+          <Projects class="pt-10"/>
+        </div>
+      </div>
+    </SectionContainer>
+  </main>
+</Layout>

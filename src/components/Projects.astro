@@ -1,0 +1,37 @@
+---
+const PROJECTS = [
+    {
+        title:"SaCars",
+        description:"Es una aplicación web diseñada para la gestión del catálogo de vehículos y la interacción con los clientes. SaCars permite a los usuarios explorar vehículos por categoría y marca, solicitar presupuestos y proporciona interfaces administrativas para gestionar el inventario, los clientes y los datos comerciales.", 
+        github:"https://github.com/JulianCastillo14/SaCars",
+        image:["https://res.cloudinary.com/dfuxpp1sb/image/upload/v1749172135/Inicio_f7dxnj.webp","https://res.cloudinary.com/dfuxpp1sb/image/upload/v1749173066/Marcas_a9mqkj.webp"],
+        tags:["Astro", "Tailwind CSS", "JavaScript"],
+    }
+]
+---
+
+{
+    PROJECTS.map((project) => (
+        <article class="p-6 rounded-lg ">
+            <h2 class="text-xl font-semibold mb-2 pb-5">{project.title}</h2>
+            <p class="text-xl text-warp max-w-[500px] lg:max-w-[700px]">{project.description}</p>
+            <a href={project.github} class="ml-4 text-blue-500 hover:underline">Ver en GitHub</a>
+            <div class="mt-4">
+                {project.tags.map(tag => (
+                    <span class="bg-green-900 text-green-300 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">{tag}</span>
+                ))}
+            </div>
+            <div class="flex flex-col items-center justify-center">
+                {project.image.map(img => (
+                    <img src={img} alt={project.title} class="mt-4 mb-4 w-[300px] h-[150px] sm:w-[700px] sm:h-[400px] rounded-lg" />
+                ))}
+            </div>
+        </article>
+    ))
+}
+
+<!-- <style>
+    article {
+        background: #15151a;
+    }
+</style> -->
