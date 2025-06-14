@@ -12,7 +12,9 @@ import Projects from "../components/Projects.astro";
 <Layout>
   <main>
     <SectionContainer>
-      <div class="flex flex-col lg:flex-row items-center justify-center gap-5 pt-15">
+      <div
+        class="flex flex-col lg:flex-row items-center justify-center gap-5 pt-15"
+      >
         <img
           id="julian-photo"
           src="../../public/julian-photo.png"
@@ -29,13 +31,14 @@ import Projects from "../components/Projects.astro";
               target="_blank"
               rel="noopener"
               class="flex justify-center items-center"
-              ><Badge>Disponible para trabajar</Badge></a
+              ><Badge>Abierto al trabajo</Badge></a
             >
           </h1>
           <h2 class="text-xl lg:text-2xl text-warp py-4 max-w-[500px]">
             <span class="text-green-200/80">Ingeniero de Sistemas</span>
-            próximo a graduarse el 20 Junio de 2025. Con una sólida formación en
-            análisis y desarrollo de software.
+            próximo a graduarse el 20 Junio de 2025 de la <span class="text-green-200/80"
+              >Universidad Industrial de Santander</span
+            >. Con una sólida formación en análisis y desarrollo de software.
           </h2>
           <nav class="flex flex-col sm:flex-row gap-4 lg:gap-6 text-lg">
             <SocialIcons
@@ -57,13 +60,13 @@ import Projects from "../components/Projects.astro";
     <SectionContainer id="sobre-mi">
       <div class="flex flex-col items-center justify-center gap-10">
         <div>
-          <h2 class="text-2xl lg:text-4xl font-bold text-left w-full pt-10">
+          <h2 class="text-2xl lg:text-4xl font-bold text-left w-full pt-10 text-[#00FF9C]">
             Sobre mí
           </h2>
           <p class="text-xl text-warp max-w-[500px] lg:max-w-[800px] pt-10">
             Soy un apasionado por la tecnología y el desarrollo de software. Me
             encanta aprender nuevas tecnologías y enfrentar desafíos que me
-            permitan crecer profesionalmente.
+            permitan crecer profesionalmente. Me desempeño con facilidad al trabajar en equipo y disfruto colaborar con otros para crear soluciones innovadoras.
           </p>
         </div>
       </div>
@@ -71,14 +74,17 @@ import Projects from "../components/Projects.astro";
     <SectionContainer id="proyectos">
       <div class="flex flex-col items-center justify-center gap-10">
         <div>
-          <h2 class="text-2xl lg:text-4xl font-bold text-left w-full">
+          <h2 class="text-2xl lg:text-4xl font-bold text-left w-full text-[#00FF9C]">
             Proyectos
           </h2>
-          <p class="text-xl text-warp max-w-[500px] lg:max-w-[800px] pt-10 pb-10">
+          <p
+            class="text-xl text-warp max-w-[500px] lg:max-w-[800px] pt-10 pb-10"
+          >
             Aquí puedes ver algunos de mis proyectos más destacados. Cada uno de
-            ellos refleja mi compromiso con la calidad y la innovación, en las soluciones de software propuestas.
+            ellos refleja mi compromiso con la calidad y la innovación, en las
+            soluciones de software desarrolladas.
           </p>
-          <Projects class="pt-10"/>
+          <Projects class="pt-10" />
         </div>
       </div>
     </SectionContainer>

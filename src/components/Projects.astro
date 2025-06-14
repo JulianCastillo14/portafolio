@@ -1,37 +1,99 @@
 ---
+import GitHubIcon from "./icons/GitHub.astro";
+import ReactIcon from "./icons/React.astro";
+import ExpressIcon from "./icons/Express.astro";
+import BootstrapIcon from "./icons/Bootstrap.astro";
+import MySQLIcon from "./icons/MySQL.astro"; // Placeholder for MySQL icon
+import HTML from "./icons/HTML.astro";
+import CSS from "./icons/CSS.astro";
+import JavaScript from "./icons/JavaScript.astro";
+import tailwindcss from "@tailwindcss/vite";
+
+const TAGS = {
+  REACT: {
+    name: "React",
+    icon: ReactIcon,
+  },
+  EXPRESS: {
+    name: "Express",
+    icon: ExpressIcon,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    icon: BootstrapIcon,  
+  },
+  MYSQL: {
+    name: "MySQL",
+    icon: MySQLIcon
+  },
+  HTML: {
+    name: "HTML",
+    icon: HTML,
+  },
+  CSS: {
+    name: "CSS",
+    icon: CSS,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    icon: JavaScript,
+  },
+};
+
 const PROJECTS = [
-    {
-        title:"SaCars",
-        description:"Es una aplicación web diseñada para la gestión del catálogo de vehículos y la interacción con los clientes. SaCars permite a los usuarios explorar vehículos por categoría y marca, solicitar presupuestos y proporciona interfaces administrativas para gestionar el inventario, los clientes y los datos comerciales.", 
-        github:"https://github.com/JulianCastillo14/SaCars",
-        image:["https://res.cloudinary.com/dfuxpp1sb/image/upload/v1749172135/Inicio_f7dxnj.webp","https://res.cloudinary.com/dfuxpp1sb/image/upload/v1749173066/Marcas_a9mqkj.webp"],
-        tags:["Astro", "Tailwind CSS", "JavaScript"],
-    }
-]
+  {
+    title: "SaCars",
+    description:
+      "Es una aplicación web diseñada para la gestión del catálogo de vehículos y la interacción con los clientes. SaCars permite a los usuarios explorar vehículos por categoría y marca, solicitar presupuestos y proporciona interfaces administrativas para gestionar el inventario, los clientes y los datos comerciales.",
+    github: "https://github.com/JulianCastillo14/SaCars",
+    image: [
+      "https://res.cloudinary.com/dfuxpp1sb/image/upload/v1749856596/Inicio_g6ndxk.webp",
+      "https://res.cloudinary.com/dfuxpp1sb/image/upload/v1749856686/Marcas_tpgnau.webp",
+    ],
+    tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.EXPRESS, TAGS.MYSQL, TAGS.HTML, TAGS.CSS, TAGS.BOOTSTRAP],
+  },
+];
 ---
 
 {
-    PROJECTS.map((project) => (
-        <article class="p-6 rounded-lg ">
-            <h2 class="text-xl font-semibold mb-2 pb-5">{project.title}</h2>
-            <p class="text-xl text-warp max-w-[500px] lg:max-w-[700px]">{project.description}</p>
-            <a href={project.github} class="ml-4 text-blue-500 hover:underline">Ver en GitHub</a>
-            <div class="mt-4">
-                {project.tags.map(tag => (
-                    <span class="bg-green-900 text-green-300 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">{tag}</span>
-                ))}
-            </div>
-            <div class="flex flex-col items-center justify-center">
-                {project.image.map(img => (
-                    <img src={img} alt={project.title} class="mt-4 mb-4 w-[300px] h-[150px] sm:w-[700px] sm:h-[400px] rounded-lg" />
-                ))}
-            </div>
-        </article>
-    ))
-}
+  PROJECTS.map((project) => (
+    <article class="p-6 border-2 border-white rounded-lg mt-10">
+      <h2 class="text-xl text-[#00FF9C] font-semibold mb-2 pb-5">
+        {project.title}
+      </h2>
+      <p class="text-xl text-warp max-w-[500px] lg:max-w-[700px]">
+        {project.description}
+      </p>
+      <a
+        href={project.github}
+        class="mt-10 rounded-full w-[200px] border border-white/10 flex justify-center items-center gap-x-2 py- px-4 mx-2 my-2 bg-white/5 hover:bg-white/10 transition-colors duration-300 h-10 shadow-md/20 shadow-[#00FF9C]"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <GitHubIcon class="size-6" />
+        Código fuente
+      </a>
+      <div class="flex flex-col items-center justify-center py-4 mt-">
+        {project.image.map((img) => (
+          <img
+            src={img}
+            alt={project.title}
+            class="mt-10 pt- mb-4 w-[300px] h-[150px] sm:w-[700px] sm:h-[400px] shadow-xl/20 shadow-[#00FF9C] rounded-lg"
+          />
+        ))}
+      </div>
 
-<!-- <style>
-    article {
-        background: #15151a;
-    }
-</style> -->
+      <div class="">
+        <h2 class="text-xl font-semibold mb-2 pb-5">Stack utilizado</h2>
+        <ul class="flex flex-wrap items-center justify-start max-w-[500px] lg:max-w-[700px]">
+          {project.tags.map((tag) => (
+            <li class="inline-flex items-center justify-center px-3 py-1 mr-2 mb-2 rounded-full border border-white/10 bg-white/5 h-10 gap-x-2 shadow-md/20 shadow-[#00FF9C] mr-4 mt-3">
+              <tag.icon class="size-4" />
+              {tag.name}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </article>
+  ))
+}
