@@ -1,8 +1,8 @@
-name: Deploy to GitHub Pages
+name: Deploy Astro to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -14,17 +14,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository
+      - name: 📥 Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install, build, and upload your site
+      - name: 🧩 Install, build, and prepare site
         uses: withastro/action@v4
 
-      - name: Upload artifact for GitHub Pages
+      - name: 📦 Upload build artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
-
+          path: ./dist  
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -32,6 +31,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
+      - name: 🚀 Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
