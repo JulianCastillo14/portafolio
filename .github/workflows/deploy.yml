@@ -20,6 +20,11 @@ jobs:
       - name: 🧩 Install, build, and prepare site
         uses: withastro/action@v4
 
+      - name: 📝 Create .nojekyll file
+      
+        run: touch dist/.nojekyll 
+
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
