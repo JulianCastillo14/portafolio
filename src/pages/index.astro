@@ -7,25 +7,27 @@ import SocialIcons from "../components/SocialIcons.astro";
 import WhatsappIcon from "../components/icons/Whatsapp.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Projects from "../components/Projects.astro";
+import EmailIcon from "../components/icons/Email.astro";
+import FileIcon from "../components/icons/File.astro";
 ---
 
 <Layout>
   <main>
     <SectionContainer>
       <div
-        class="flex flex-col lg:flex-row items-center justify-center gap-5 pt-15"
+        class="flex flex-col lg:flex-row items-center justify-center gap-5 pt-15 "
       >
         <img
           id="julian-photo"
-          src="../../public/julian-photo.png"
-          alt="julian-photo"
-          class="rounded-full size-64 lg:w-70 lg:h-70 object-cover border-4 border-white-500"
+          src="/portafolio/julian-photo.png"
+          alt="julian-perfil"
+          class="rounded-full size-64 lg:w-70 lg:h-70 object-cover border-4 border-white-500 mr-5"
         />
         <div>
           <h1
-            class="text-2xl lg:text-4xl font-bold flex flex-row gap-x-2 sm:gap-x-4 pb-2 lg:pb-10 w-[300px] sm:w-[500px] sm:w-full text-pretty-100 lg:text-left"
+            class="text-2xl lg:text-4xl font-bold flex flex-row gap-x-2 sm:gap-x-4 pb-2 sm:pb-6 w-[300px] sm:w-[570px] mt-10 text-pretty-100 lg:text-left"
           >
-            Hola, soy Julian
+            Julian Cañon
             <a
               href="https://www.linkedin.com/in/julian-ca%C3%B1on-a733a3320/"
               target="_blank"
@@ -34,13 +36,16 @@ import Projects from "../components/Projects.astro";
               ><Badge>Abierto al trabajo</Badge></a
             >
           </h1>
-          <h2 class="text-xl lg:text-2xl text-warp py-4 max-w-[500px]">
+          <h2 class="text-xl lg:text-2xl text-warp max-w-[728px] lg:max-w-[570px] pb-2 mt-2">
             <span class="text-green-200/80">Ingeniero de Sistemas</span>
-            próximo a graduarse el 20 Junio de 2025 de la <span class="text-green-200/80"
+            egresado de la <span class="text-green-200/80"
               >Universidad Industrial de Santander</span
-            >. Con una sólida formación en análisis y desarrollo de software.
+            >, con una sólida formación en análisis y desarrollo de software.
           </h2>
-          <nav class="flex flex-col sm:flex-row gap-4 lg:gap-6 text-lg">
+          <nav class="flex flex-row flex-wrap gap-4  lg:gap-6 text-lg max-w-[570px] sm:max-w-[600px] mt-4">
+            <SocialIcons href="/portafolio/Julian-curriculum.pdf">
+              <FileIcon class="size-6" /> Currículum
+            </SocialIcons>
             <SocialIcons
               href="https://www.linkedin.com/in/julian-ca%C3%B1on-a733a3320/"
             >
@@ -53,6 +58,11 @@ import Projects from "../components/Projects.astro";
             <SocialIcons href="https://wa.me/+573116518098">
               <WhatsappIcon class="size-6" /> WhatsApp
             </SocialIcons>
+            <SocialIcons>
+              <EmailIcon class="size-6" /> julian.castillo.ing@gmail.com
+            </SocialIcons>
+            
+            
           </nav>
         </div>
       </div>
@@ -60,13 +70,11 @@ import Projects from "../components/Projects.astro";
     <SectionContainer id="sobre-mi">
       <div class="flex flex-col items-center justify-center gap-10">
         <div>
-          <h2 class="text-2xl lg:text-4xl font-bold text-left w-full pt-10 text-[#00FF9C]">
+          <h2 class="text-2xl lg:text-4xl font-bold text-left w-full mt-5 text-[#00FF9C] ">
             Sobre mí
           </h2>
-          <p class="text-xl text-warp max-w-[500px] lg:max-w-[800px] pt-10">
-            Soy un apasionado por la tecnología y el desarrollo de software. Me
-            encanta aprender nuevas tecnologías y enfrentar desafíos que me
-            permitan crecer profesionalmente. Me desempeño con facilidad al trabajar en equipo y disfruto colaborar con otros para crear soluciones innovadoras.
+          <p class="text-xl text-warp max-w-[728px] lg:max-w-[870px] pt-10">
+            Soy un apasionado por la tecnología y el desarrollo de software. Disfruto aprender nuevas tecnologías y enfrentar desafíos que me permitan crecer profesionalmente. Me desenvuelvo con facilidad al trabajar en equipo y valoro la colaboración para crear soluciones innovadoras.
           </p>
         </div>
       </div>
@@ -78,10 +86,9 @@ import Projects from "../components/Projects.astro";
             Proyectos
           </h2>
           <p
-            class="text-xl text-warp max-w-[500px] lg:max-w-[800px] pt-10 pb-10"
+            class="text-xl text-warp max-w-[728px] lg:max-w-[870px] pt-10"
           >
-            Aquí puedes ver algunos de mis proyectos más destacados. Cada uno de
-            ellos refleja mi compromiso con la calidad y la innovación, en las
+            Aquí puedes ver algunos de mis proyectos más destacados. Cada uno refleja mi compromiso con la calidad y la innovación en las
             soluciones de software desarrolladas.
           </p>
           <Projects class="pt-10" />
